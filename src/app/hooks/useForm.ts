@@ -53,9 +53,11 @@ export default function useForm() {
       return
     }
 
-    userData?.id
-      ? await updateUser(userData?.id, { name, job })
-      : await storeUser({ name, job })
+    if (userData?.id) {
+      await updateUser(userData.id, { name, job })
+    } else {
+      await storeUser({ name, job })
+    }
     setNotification(userData ? USER_UPDATED : USER_SAVED)
     setTimeout(() => {
       setNotification(null)
