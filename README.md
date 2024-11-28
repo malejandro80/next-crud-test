@@ -20,3 +20,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ```
+
+Open [https://next-crud-test-pg55i8ga4-malejandro80s-projects.vercel.app](online URL) visit the page Online
+
+##folder Structure
+
+src/
+├── app/
+│ ├── components/ # Reusable React components
+│ ├── constants/ # Constant values (e.g., messages, URLs)
+│ ├── context/ # Context API providers and consumers
+│ ├── hooks/ # Custom React hooks
+│ ├── services/ # API service functions
+│ └── types/ # TypeScript type definitions
