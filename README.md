@@ -21,15 +21,19 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ```
 
-Open [https://next-crud-test-pg55i8ga4-malejandro80s-projects.vercel.app](online URL) visit the page Online
+## visit the page Online[URL](https://next-crud-test-pg55i8ga4-malejandro80s-projects.vercel.app)
 
 ##folder Structure
 
-src/
-├── app/
-│ ├── components/ # Reusable React components
-│ ├── constants/ # Constant values (e.g., messages, URLs)
-│ ├── context/ # Context API providers and consumers
-│ ├── hooks/ # Custom React hooks
-│ ├── services/ # API service functions
-│ └── types/ # TypeScript type definitions
+### Detailed Descriptions
+
+- **`components/`**: Contains reusable and modular UI components. These include buttons, forms, tables, and other building blocks for the user interface.
+- **`constants/`**: Houses constant values used across the project, such as error messages, URLs, or reusable string literals, to maintain consistency.
+
+- **`context/`**: Contains the setup for the Context API, used for global state management. This is ideal for sharing state between components without prop drilling.
+
+- **`hooks/`**: Includes custom React hooks that encapsulate reusable logic, such as form handling or API calls.
+
+- **`services/`**: Provides functions to handle communication with APIs or external data sources, including CRUD operations and data-fetching utilities.
+
+- **`types/`**: Contains TypeScript type definitions and interfaces, ensuring strong typing and better code reliability throughout the project.
