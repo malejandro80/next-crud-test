@@ -22,6 +22,10 @@ export type PaginatedResponse = {
   support: SupportInfo
 }
 
+export type UserResponse = {
+  data: User
+}
+
 export type saveUserResp = {
   name: string
   job: string

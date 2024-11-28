@@ -6,7 +6,7 @@ import { getUser, getUsers } from '../services/user.service'
 
 export const useUser = () => {
   const [users, setUsers] = useState<User[] | null>(null)
-  const [selectedUser, setSelectedUser] = useState<User[] | null>(null)
+  const [selectedUser, setSelectedUser] = useState<User | null>(null)
 
   useEffect(() => {
     init()

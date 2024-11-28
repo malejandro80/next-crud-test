@@ -1,13 +1,13 @@
 /** @format */
 
 import { del, get, post, put } from './http.service'
-import { PaginatedResponse, saveUserResp } from '../types/user'
+import { PaginatedResponse, saveUserResp, UserResponse } from '../types/user'
 
 export const getUsers = async (): Promise<PaginatedResponse> => {
   return await get('users?page=1')
 }
 
-export const getUser = async (id: number): Promise<PaginatedResponse> => {
+export const getUser = async (id: number): Promise<UserResponse> => {
   return await get(`users/${id}`)
 }
 
