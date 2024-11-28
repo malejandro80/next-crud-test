@@ -21,11 +21,9 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ```
 
-## visit the page Online[URL](https://next-crud-test-pg55i8ga4-malejandro80s-projects.vercel.app)
+## visit the page Online [URL](https://next-crud-test-pg55i8ga4-malejandro80s-projects.vercel.app)
 
-##folder Structure
-
-### Detailed Descriptions
+## folder Structure
 
 - **`components/`**: Contains reusable and modular UI components. These include buttons, forms, tables, and other building blocks for the user interface.
 - **`constants/`**: Houses constant values used across the project, such as error messages, URLs, or reusable string literals, to maintain consistency.
