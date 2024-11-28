@@ -11,7 +11,7 @@ import { StateProvider } from './context/formContext'
 import { useUser } from './hooks/useUser'
 
 export default function Home() {
-  const { users, deleteUser, selectUser, selectedUser } = useUser()
+  const { users, selectUser, selectedUser } = useUser()
 
   return (
     <StateProvider>
@@ -19,11 +19,7 @@ export default function Home() {
         <UserForm />
 
         <Row>
-          <MainTable
-            users={users}
-            deleteUser={deleteUser}
-            selectUser={selectUser}
-          />
+          <MainTable users={users} selectUser={selectUser} />
         </Row>
         <UserDetail selectedUser={selectedUser} />
       </Container>

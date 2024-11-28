@@ -17,13 +17,9 @@ export const useUser = () => {
     setUsers(resp.data)
   }
 
-  const deleteUser = async () => {
-    alert('delete')
-  }
-
   const selectUser = async (id: number) => {
     const resp = await getUser(id)
     setSelectedUser(resp.data)
   }
-  return { users, deleteUser, selectUser, selectedUser }
+  return { users, selectUser, selectedUser }
 }
