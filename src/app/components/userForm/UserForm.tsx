@@ -2,60 +2,31 @@
 
 'use client'
 
-import { useEffect, useState } from 'react'
-import { ModalLayout } from '../modalLayout/modalLayout'
-import Form from 'react-bootstrap/Form'
-import { Button } from 'react-bootstrap'
 import { useStateContext } from '@/app/context/formContext'
+import useForm from '@/app/hooks/useForm'
+import { Button } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
+import { ModalLayout } from '../modalLayout/modalLayout'
+import { Notification } from '../notification/Notification'
 
 export const UserForm = () => {
-  const [modalShow, setModalShow] = useState(true)
-  const { userData } = useStateContext()
+  const { isFormOpen, setIsFormOpen, setUserData, notification } =
+    useStateContext()
 
-  const [formData, setFormData] = useState({
-    name: '',
-    job: ''
-  })
-
-  useEffect(() => {
-    if (userData) {
-      console.log(userData, 'userData')
-      setFormData({ ...formData, name: userData.first_name })
-    }
-  }, [userData])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const saveUser = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    const { name, job } = formData
-
-    if (!name.trim() || !job.trim()) {
-      alert('Please fill out all fields.')
-      return
-    }
-
-    console.log({ name, job })
-
-    alert(`User saved: Name: ${name}, Job: ${job}`)
-    setModalShow(false)
-  }
+  const { handleUser, handleChange, formData } = useForm()
 
   return (
     <>
+      {notification && <Notification />}
       <ModalLayout
         title='Add User'
-        modalShow={modalShow}
-        onClose={setModalShow}
+        modalShow={isFormOpen}
+        onClose={() => {
+          setIsFormOpen(false)
+          setUserData(null)
+        }}
       >
-        <Form onSubmit={saveUser}>
+        <Form onSubmit={handleUser}>
           <Form.Group className='mb-3'>
             <Form.Label>Name</Form.Label>
             <Form.Control
