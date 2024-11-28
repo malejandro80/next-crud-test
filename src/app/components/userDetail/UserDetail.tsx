@@ -8,7 +8,7 @@ import { Image } from 'react-bootstrap'
 import { ModalLayout } from '../modalLayout/modalLayout'
 import style from './UserDetail.module.css'
 
-type props = { selectedUser: User }
+type props = { selectedUser: User | null }
 export const UserDetail = ({ selectedUser }: props) => {
   const [modalShow, setModalShow] = useState(false)
 
