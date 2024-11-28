@@ -15,7 +15,6 @@ export const useUser = () => {
   const init = async () => {
     const resp = await getUsers()
     setUsers(resp.data)
-    console.log(resp, 'resp')
   }
 
   const deleteUser = async () => {

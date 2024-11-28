@@ -43,8 +43,6 @@ export default function useForm() {
   const handleUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    console.log(userData, 'userData')
-
     const { name, job } = formData
 
     if (!name.trim() || !job.trim()) {
@@ -55,7 +53,7 @@ export default function useForm() {
       return
     }
 
-    const resp = userData?.id
+    userData?.id
       ? await updateUser(userData?.id, { name, job })
       : await storeUser({ name, job })
     setNotification(userData ? USER_UPDATED : USER_SAVED)
